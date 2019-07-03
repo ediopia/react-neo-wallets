@@ -1,5 +1,7 @@
 import { Account } from "./types/types";
-
+const o3dapi = require("o3-dapi-core");
+const o3dapiNeo = require("o3-dapi-neo");
+o3dapi.initPlugins([o3dapiNeo]);
 export const onConnect = (provider: string, cb: (error: any, account: Account | undefined) => void): void => {
   switch (provider) {
     case "O3":
@@ -10,22 +12,18 @@ export const onConnect = (provider: string, cb: (error: any, account: Account | 
   }
 };
 
-const connectO3 = (cb: (error: any, account: Account | undefined) => void) => {
-  const o3dapi = require("o3-dapi-core");
-  const o3dapiNeo = require("o3-dapi-neo");
-  o3dapi.initPlugins([o3dapiNeo]);
-  o3dapi.NEO.getAccount()
-    .then((account: any) => {
-      const { address } = account;
-      cb(null, {
-        provider: "O3",
-        address,
-        encryptedKey: "",
-      });
-    })
-    .catch((e: any) => {
-      cb(e.description ? e.description : e.type, undefined);
+const connectO3 = async (cb: (error: any, account: Account | undefined) => void) => {
+  try {
+    const account = await o3dapi.NEO.getAccount();
+    const { address } = account;
+    cb(null, {
+      provider: "O3",
+      address,
+      encryptedKey: "",
     });
+  } catch (e) {
+    cb(e.description ? e.description : e.type, undefined);
+  }
 };
 
 const connectNOS = (cb: (error: any, account: Account | undefined) => void) => {
