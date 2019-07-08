@@ -8,13 +8,11 @@ $ npm install --save react-neo-wallets
 
 ## Features
 
-- O3 wallet plugin
-- NOS wallet plugin
-- Import NEP2
-- Import NEP6
+- Connect with O3 wallet.
+- Connect with NOS client.
+- Import local keys and files.
 
 ## Usage
-
 
 ```typescript
 import React from "react";
@@ -24,19 +22,31 @@ interface WalletProps {
   provider: string;
   address: string;
   encryptedKey: string;
+  privateKey?: string;
 }
 
-const App = () => {
-  const handleConnected = (err: string, wallet: WalletProps) => {
-    if (err) {
-      // Handle error message
-    } else {
-      // Handle wallet
-    }
+const walletsInLocaStorage = [
+  {
+    encryptedKey: "6PYRj8SFUkDXm8vBunXkvVGAAan6HF3iDfKT4wcQMkpGkDHsVG8cbD9eSi",
+    address: "AVKEWZxPog7j5gqfMoLhgox9HK44tWUG2J"
+  },
+  {
+    encryptedKey: "6PYPUoZGMsGjWuqxekVcXrpzMdtks7VTSUZDoEpHLitjB2AnpWeLbpk2Dp",
+    address: "AeRhK6NDmGiNTz8yAAJe3o4ecaqztFL12B"
+  },
+  ...
+];
+
+const WalletModal = () => {
+  const handleConnected = (wallet: WalletProps) => {
+    // Handle neo wallet keys depending on your way.
   };
   return (
     <div>
-      <ReactNeoWallets onConnected={handleConnected} />
+      <ReactNeoWallets
+        savedWallets={walletsInLocaStorage}
+        onConnected={handleConnected}
+      />
     </div>
   );
 };
