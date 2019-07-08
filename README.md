@@ -1,16 +1,24 @@
-# React NEO wallets
+# React NEO Wallets
+
+## Description
+
+Figuring out crypto wallets is the first obstacle for dapp development. This package will help you to handle NEO wallets for your NEO dapp.
+
+## Features
+
+- Connect with O3 wallet.
+- Connect with NOS client.
+- Import keys and local files.
+
+## Demo
+
+https://ediopia.github.io/react-neo-wallets/
 
 ## Installation
 
 ```
 $ npm install --save react-neo-wallets
 ```
-
-## Features
-
-- Connect with O3 wallet.
-- Connect with NOS client.
-- Import local keys and files.
 
 ## Usage
 
@@ -42,12 +50,14 @@ const WalletModal = () => {
     // Handle decrypted keys depending on your way.
   };
   return (
-    <div>
-      <ReactNeoWallets
-        savedWallets={walletsInLocalStorage}
-        onConnected={handleConnected}
-      />
-    </div>
+	  <ReactNeoWallets
+	    savedWallets={walletsInLocalStorage}
+	    onConnected={handleConnected}
+	  />
   );
 };
 ```
+ 
+## License
+ 
+The MIT License (MIT)
