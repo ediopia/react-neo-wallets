@@ -1,14 +1,30 @@
+export interface AppProps {
+  savedWallets?: [{
+    encryptedKey: string;
+    address: string;
+  }];
+  onConnected: (account: any) => void;
+}
+
+export interface IRoute {
+  label: string;
+  path: string;
+  component: any;
+  exact?: boolean;
+}
+
+export interface IImportRoute {
+  label: string;
+  component: any;
+}
+
 export interface Account {
   provider: string;
   address: string;
   encryptedKey: string | undefined;
 }
 
-export interface ConnectProps {
-  onConnected: (error: any | null, account: Account | undefined) => void
-}
-
-export interface Nep2FormStates {
+export interface Nep2States {
   encryptedKey: string;
   password: string;
 }
