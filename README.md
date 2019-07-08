@@ -21,11 +21,11 @@ import ReactNeoWallets from "react-neo-wallets";
 interface WalletProps {
   provider: string;
   address: string;
-  encryptedKey: string;
+  encryptedKey?: string;
   privateKey?: string;
 }
 
-const walletsInLocaStorage = [
+const walletsInLocalStorage = [
   {
     encryptedKey: "6PYRj8SFUkDXm8vBunXkvVGAAan6HF3iDfKT4wcQMkpGkDHsVG8cbD9eSi",
     address: "AVKEWZxPog7j5gqfMoLhgox9HK44tWUG2J"
@@ -39,12 +39,12 @@ const walletsInLocaStorage = [
 
 const WalletModal = () => {
   const handleConnected = (wallet: WalletProps) => {
-    // Handle neo wallet keys depending on your way.
+    // Handle decrypted keys depending on your way.
   };
   return (
     <div>
       <ReactNeoWallets
-        savedWallets={walletsInLocaStorage}
+        savedWallets={walletsInLocalStorage}
         onConnected={handleConnected}
       />
     </div>
