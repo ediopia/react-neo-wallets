@@ -1,6 +1,6 @@
 {
   "name": "react-neo-wallets",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React Neo Wallets",
   "homepage": "https://ediopia.github.io/react-neo-wallets",
   "main": "dist/index.js",
