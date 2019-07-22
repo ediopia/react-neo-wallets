@@ -1,7 +1,7 @@
 import * as React from "react";
-import { IRoute } from "../../../../types/types";
+import { AppRoute } from "../../../../types/types";
 import { Link } from "react-router-dom";
-const AppMenuItem = (props: IRoute) => {
+const AppMenuItem = (props: AppRoute) => {
   return (
     <Link to={props.path}>
       {

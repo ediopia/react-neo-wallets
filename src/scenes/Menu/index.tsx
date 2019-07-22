@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IRoute } from "../../types/types";
+import { AppRoute } from "../../types/types";
 import { List } from "antd";
 import { routes } from "../../routes";
 import AppMenuItem from "./components/Item";
@@ -10,7 +10,7 @@ const AppMenu = () => {
         size="large"
         bordered
         dataSource={routes}
-        renderItem={(item: IRoute) => {
+        renderItem={(item: AppRoute) => {
           if (!item.exact) {
             return (
               <List.Item>

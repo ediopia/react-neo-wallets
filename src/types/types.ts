@@ -3,17 +3,17 @@ export interface AppProps {
     encryptedKey: string;
     address: string;
   }];
-  onConnected: (account: any) => void;
+  onConnected: (account: Account) => void;
 }
 
-export interface IRoute {
+export interface AppRoute {
   label: string;
   path: string;
   component: any;
   exact?: boolean;
 }
 
-export interface IImportRoute {
+export interface ImportRoute {
   label: string;
   component: any;
 }
@@ -21,7 +21,8 @@ export interface IImportRoute {
 export interface Account {
   provider: string;
   address: string;
-  encryptedKey: string | undefined;
+  encryptedKey?: string;
+  privateKey?: string
 }
 
 export interface Nep2States {

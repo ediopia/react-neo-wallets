@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { localImportsRoutes } from "./routes";
 import { Tabs } from "antd";
-import { AppProps, IImportRoute } from "../../types/types";
+import { AppProps, ImportRoute } from "../../types/types";
 import SavedWallets from "./scenes/SavedWallets";
 
 const LocalImports = (props: AppProps & RouteComponentProps) => {
@@ -20,7 +20,7 @@ const LocalImports = (props: AppProps & RouteComponentProps) => {
             <SavedWallets {...props} />
           </Tabs.TabPane>
         ) : null}
-        {localImportsRoutes.map((route: IImportRoute, index) => {
+        {localImportsRoutes.map((route: ImportRoute, index) => {
           const key = (index + 1).toString();
           return (
             <Tabs.TabPane key={key} tab={route.label}>

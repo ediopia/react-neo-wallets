@@ -14,6 +14,7 @@ const ConnectNos = (props: AppProps & RouteComponentProps) => {
       if (error) {
         setErrorMsg(error);
       } else {
+        props.onConnected(account)
       }
     });
   });

@@ -3,13 +3,13 @@ import { MemoryRouter, Route, RouteComponentProps } from "react-router-dom";
 import "antd/dist/antd.css";
 import "../assets/custom-style.css";
 import { routes } from "./routes";
-import { AppProps, IRoute } from "./types/types";
+import { AppProps, AppRoute } from "./types/types";
 
 const ReactNeoWallet = (props: AppProps) => {
   return (
     <MemoryRouter initialEntries={[`/`]}>
       <div>
-        {routes.map((route: IRoute) => {
+        {routes.map((route: AppRoute) => {
           return (
             <Route
               key={route.path}

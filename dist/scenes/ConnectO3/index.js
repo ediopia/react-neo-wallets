@@ -21,6 +21,7 @@ const ConnectO3 = (props) => {
                 setErrorMsg(error);
             }
             else {
+                props.onConnected(account);
             }
         });
     });

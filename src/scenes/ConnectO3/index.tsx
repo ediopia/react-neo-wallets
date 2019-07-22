@@ -14,6 +14,7 @@ const ConnectO3 = (props: AppProps & RouteComponentProps) => {
       if (error) {
         setErrorMsg(error);
       } else {
+        props.onConnected(account)
       }
     });
   });
