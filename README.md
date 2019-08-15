@@ -1,3 +1,6 @@
+# Deprecated
+### This package will be maintained [@neo-react](https://github.com/ediopia/neo-react)
+Please use [@neo-react/wallets](https://www.npmjs.com/package/@neo-react/wallets)
 # React NEO Wallets
 
 ## Description

@@ -1,0 +1,1 @@
+{"version":3,"file":"store.types.d.ts","sourceRoot":"","sources":["../../src/redux/store.types.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,oBAAoB,EAAE,eAAe,EAAE,MAAM,yBAAyB,CAAC;AAChF,OAAO,EAAE,YAAY,EAAE,MAAM,yBAAyB,CAAC;AAEvD,MAAM,WAAW,SAAS;IACxB,WAAW,EAAE,eAAe,CAAA;IAC5B,WAAW,EAAE,YAAY,CAAA;CAC1B;AAED,MAAM,WAAW,kBAAkB;IACjC,WAAW,EAAE,oBAAoB,CAAA;IACjC,WAAW,EAAE,YAAY,CAAA;CAC1B"}
